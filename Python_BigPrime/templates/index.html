@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 30%;
+        background-color: #dcdcdc;
+        margin: 10% auto 0;
+        padding: 20px;
+      }
+      .wrap form {
+        width: 305px;
+        margin: auto;
+      }
+      .wrap form > div {
+        margin-top: 10px;
+      }
+      label {
+        width: 305px;
+        text-align: left;
+        display: inline-block;
+      }
+      input {
+        outline: none;
+      }
+      input[type="submit"] {
+        line-height: 1.499;
+        position: relative;
+        display: inline-block;
+        font-weight: 400;
+        white-space: nowrap;
+        text-align: center;
+        background-image: none;
+        cursor: pointer;
+        user-select: none;
+        touch-action: manipulation;
+        height: 32px;
+        font-size: 14px;
+        border-width: 1px;
+        border-style: solid;
+        border-image: initial;
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+        padding: 0px 15px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(24, 144, 255);
+        text-shadow: rgba(0, 0, 0, 0.12) 0px -1px 0px;
+        box-shadow: rgba(0, 0, 0, 0.043) 0px 2px 0px;
+        border-color: rgb(24, 144, 255);
+      }
+
+      .error input {
+        background-color: #ff4d4f;
+        border-color: #ff4d4f;
+        box-shadow: 0 2px 0 rgba(255, 38, 5, 0.06);
+      }
+
+      .ok input:hover,
+      .ok input:focus {
+        color: rgb(255, 255, 255);
+        background-color: rgb(64, 169, 255);
+        border-color: rgb(64, 169, 255);
+      }
+      .error input:hover,
+      .error input:focus {
+        color: rgb(255, 255, 255);
+        background-color: #ff7875;
+        border-color: #ff7875;
+      }
+
+      input[type="text"] {
+        position: relative;
+        display: inline-block;
+        height: 32px;
+        width: calc(100% - 24px);
+        color: rgba(0, 0, 0, 0.65);
+        font-size: 14px;
+        line-height: 1.5;
+        background-color: rgb(255, 255, 255);
+        background-image: none;
+        margin: 0px;
+        font-variant: tabular-nums;
+        list-style: none;
+        padding: 4px 11px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(217, 217, 217);
+        border-image: initial;
+        border-radius: 4px;
+        transition: all 0.3s ease 0s;
+      }
+      input[type="text"]:focus {
+        box-shadow: rgba(24, 144, 255, 0.2) 0px 0px 0px 2px;
+        border-right-width: 1px !important;
+        border-color: rgb(64, 169, 255);
+        outline: 0px;
+      }
+      .btn-wrap {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <form class="form" method="POST">
+        <h2>Big Prime Number</h2>
+        <div>
+          <div>{{ form.hidden_tag() }} {{ form.width.label }}</div>
+          {{ form.width() }}
+        </div>
+        <div>
+          <div>{{ form.times.label }}</div>
+          {{ form.times() }}
+        </div>
+        <div>
+          <div>{{ form.file.label }}</div>
+          {{ form.file() }}
+        </div>
+        <div class="btn-wrap">
+          <span class="ok">{{ form.submit() }}</span>
+          <span class="error">{{ form.submit1() }}</span>
+        </div>
+      </form>
+    </div>
+    <!--
+<form class="form1" method="POST">
+
+</form>
+-->
+  </body>
+</html>
